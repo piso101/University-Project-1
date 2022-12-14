@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "login", "login.csproj", "{37EB3A5E-1806-4068-A19F-9E62F35046C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "apk.admin", "..\apk.admin backup\apk.admin\apk.admin.csproj", "{68DB2F0E-1874-4DD1-95E4-89D7B39B410E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "apk_user", "..\apk_user\apk_user\apk_user.csproj", "{783CEB48-A982-4B46-9533-B5921ED841F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37EB3A5E-1806-4068-A19F-9E62F35046C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37EB3A5E-1806-4068-A19F-9E62F35046C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37EB3A5E-1806-4068-A19F-9E62F35046C3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{37EB3A5E-1806-4068-A19F-9E62F35046C3}.Debug|x64.Build.0 = Debug|Any CPU
+		{37EB3A5E-1806-4068-A19F-9E62F35046C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37EB3A5E-1806-4068-A19F-9E62F35046C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37EB3A5E-1806-4068-A19F-9E62F35046C3}.Release|x64.ActiveCfg = Release|Any CPU
+		{37EB3A5E-1806-4068-A19F-9E62F35046C3}.Release|x64.Build.0 = Release|Any CPU
+		{68DB2F0E-1874-4DD1-95E4-89D7B39B410E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68DB2F0E-1874-4DD1-95E4-89D7B39B410E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68DB2F0E-1874-4DD1-95E4-89D7B39B410E}.Debug|x64.ActiveCfg = Debug|x64
+		{68DB2F0E-1874-4DD1-95E4-89D7B39B410E}.Debug|x64.Build.0 = Debug|x64
+		{68DB2F0E-1874-4DD1-95E4-89D7B39B410E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68DB2F0E-1874-4DD1-95E4-89D7B39B410E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68DB2F0E-1874-4DD1-95E4-89D7B39B410E}.Release|x64.ActiveCfg = Release|x64
+		{68DB2F0E-1874-4DD1-95E4-89D7B39B410E}.Release|x64.Build.0 = Release|x64
+		{783CEB48-A982-4B46-9533-B5921ED841F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{783CEB48-A982-4B46-9533-B5921ED841F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{783CEB48-A982-4B46-9533-B5921ED841F3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{783CEB48-A982-4B46-9533-B5921ED841F3}.Debug|x64.Build.0 = Debug|Any CPU
+		{783CEB48-A982-4B46-9533-B5921ED841F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{783CEB48-A982-4B46-9533-B5921ED841F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{783CEB48-A982-4B46-9533-B5921ED841F3}.Release|x64.ActiveCfg = Release|Any CPU
+		{783CEB48-A982-4B46-9533-B5921ED841F3}.Release|x64.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23BDCE92-1173-4B65-9C76-2450DC4C4077}
+	EndGlobalSection
+EndGlobal
