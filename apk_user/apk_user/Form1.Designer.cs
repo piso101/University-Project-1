@@ -99,10 +99,10 @@
             // 
             // zabukowaneuser1
             // 
-            this.zabukowaneuser1.Location = new System.Drawing.Point(233, 11);
+            this.zabukowaneuser1.Location = new System.Drawing.Point(236, 12);
             this.zabukowaneuser1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.zabukowaneuser1.Name = "zabukowaneuser1";
-            this.zabukowaneuser1.Size = new System.Drawing.Size(778, 427);
+            this.zabukowaneuser1.Size = new System.Drawing.Size(794, 448);
             this.zabukowaneuser1.TabIndex = 6;
             this.zabukowaneuser1.Load += new System.EventHandler(this.zabukowaneuser1_Load);
             // 
