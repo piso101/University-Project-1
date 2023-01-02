@@ -18,7 +18,7 @@ namespace apk_user
         public Form1()
         {
             InitializeComponent();
-   
+            
         }
         private SqlConnection conn = new SqlConnection(@"Server=tcp:projektprogramowanie.database.windows.net,1433;Initial Catalog=projekt;Persist Security Info=False;User ID=piso101;Password=Password1!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
@@ -30,7 +30,8 @@ namespace apk_user
             username = a.ToString();
             user_password = b.ToString();
             logindisplay.Text = "Witaj, " + username;
-        
+            
+            
 
 
         }
@@ -60,11 +61,13 @@ namespace apk_user
         public void mojelotybtn_Click(object sender, EventArgs e)
         {
             wyszlotow1.Hide();
-            InitializeComponent();
+            zabukowaneuser1.Show();
+            zabukowaneuser1.BringToFront();
             apk_user.zabukowaneuser f2 = new apk_user.zabukowaneuser();
             string a = username;
             string b = user_password;
-            if(a != null){
+            if (a != null)
+            {
                 f2.userdid(a.ToString(), b.ToString());
             }
             else
@@ -72,8 +75,6 @@ namespace apk_user
                 Console.WriteLine("Brak użytkownika");
 
             }
-            zabukowaneuser1.Show();
-            zabukowaneuser1.BringToFront();
 
         }
 

@@ -18,18 +18,7 @@ namespace apk_user
         public zabukowaneuser()
         {
             InitializeComponent();
-            string command = "SELECT userid FROM users WHERE login_text = '" + username + "' AND haslo = '" + user_password + "'";
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(command, conn);
-            SqlDataReader reader;
-            reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                string userid = reader["userid"].ToString();
-                Console.WriteLine(userid);
-
-            }
+            
 
         }
         private SqlConnection conn = new SqlConnection(@"Server=tcp:projektprogramowanie.database.windows.net,1433;Initial Catalog=projekt;Persist Security Info=False;User ID=piso101;Password=Password1!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
@@ -39,6 +28,27 @@ namespace apk_user
         {
             username = a.ToString();
             user_password = b.ToString();
+            string command = "SELECT userid FROM users WHERE login_text = '" + username + "' AND haslo = '" + user_password + "'";
+            conn.Open();
+            SqlCommand cmd = new SqlCommand(command, conn);
+            SqlDataReader reader;
+            reader = cmd.ExecuteReader();
+            string userid = "";
+
+            while (reader.Read())
+            {
+                userid = reader["userid"].ToString();
+            }
+            
+            string commandid = "SELECT * FROM zabukowane WHERE userid = '" + userid + "'";
+            SqlCommand cmdid = new SqlCommand(commandid, conn);
+            reader.Close();
+            DataTable data1 = new DataTable();
+            SqlDataAdapter adapter1 = new SqlDataAdapter(cmdid);
+            adapter1.Fill(data1);
+            dataGridView2.DataSource = data1;
+            conn.Close();
+
         }
 
         private void zabukowaneuser_Load(object sender, EventArgs e)
