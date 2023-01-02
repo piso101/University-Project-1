@@ -121,7 +121,16 @@ namespace apk_user
                     Console.WriteLine(id);
                     cn.Open();
                     // tutaj trzeba pobrać dane lotu aby Muc (hehe) je wypełnić w kodzie poniżej i dodać do tablicy zabukowane
-
+                    string test1 = dataGridView1.Columns[1].ToString();
+                        Console.WriteLine(test1);
+                    string test2 = dataGridView1.Columns[2].ToString();
+                    Console.WriteLine(test2);
+                    string test3 = dataGridView1.Columns[3].ToString();
+                    Console.WriteLine(test3);
+                    string test4 = dataGridView1.Columns[4].ToString();
+                    Console.WriteLine(test4);
+                    string test5 = dataGridView1.Columns[5].ToString();
+                    Console.WriteLine(test5);
                     SqlCommand cmdinsert = new SqlCommand();
                     cmdinsert.Connection = cn;
                     cmdinsert.CommandText = "INSERT INTO zabukowane (userid,idlotu,miejsce,cenabagazu,cenabiletu) Values (@pam1,@pam2,@pam3,@pam4,@pam5)";
