@@ -63,9 +63,10 @@
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button1.Location = new System.Drawing.Point(136, 250);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 42);
+            this.button1.Size = new System.Drawing.Size(96, 52);
             this.button1.TabIndex = 1;
             this.button1.Text = "Powrót do logowania";
             this.button1.UseVisualStyleBackColor = false;
@@ -170,7 +171,7 @@
             this.registernewuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registernewuser.Location = new System.Drawing.Point(37, 250);
             this.registernewuser.Name = "registernewuser";
-            this.registernewuser.Size = new System.Drawing.Size(96, 42);
+            this.registernewuser.Size = new System.Drawing.Size(96, 52);
             this.registernewuser.TabIndex = 13;
             this.registernewuser.Text = "Zarejestruj";
             this.registernewuser.UseVisualStyleBackColor = false;
