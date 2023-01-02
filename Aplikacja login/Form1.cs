@@ -64,7 +64,8 @@ namespace login
                             progresladowania.Value = 100;
                             apk_user.Form1 f2 = new apk_user.Form1();
                             string a = username;
-                            f2.userdisplay(a.ToString());
+                            string b = user_password;
+                            f2.userdisplay(a.ToString(), b.ToString());
                             f2.Show();//otwiramy user apk poprzez odnosnik f2
                         }
                         else//jezeli nie to blad
