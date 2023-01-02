@@ -14,7 +14,8 @@ namespace apk.admin
         {
             this.Validate();
             this.usersBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.projektDataSet);//ustawia na poczatku dane z bazy danych
+            //this.tableAdapterManager.UpdateAll(this.projektDataSet);//ustawia na poczatku dane z bazy danych
+            this.usersTableAdapter.Update(this.projektDataSet);
         }
 
         private void usersDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
