@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace apk_user
 {
@@ -29,6 +30,30 @@ namespace apk_user
             dokadbox.DataSource = dt_dokad;
             dokadbox.DisplayMember = "dokad";
             cn.Close();
+
+        }
+        public static string username;
+        public static string user_password;
+        public static int id;
+        public void Userd_id(string c, string d)
+        {
+            username = c.ToString();
+            user_password = d.ToString();
+            string command = "SELECT userid FROM users WHERE login_text = '" + username + "' AND haslo = '" + user_password + "'";
+            cn.Open();
+            SqlCommand cmd = new SqlCommand(command, cn);
+            SqlDataReader reader;
+            reader = cmd.ExecuteReader();
+            string userid = "";
+
+            while (reader.Read())
+            {
+                userid = reader["userid"].ToString();
+            }
+
+            id = int.Parse(userid);
+            reader.Close();
+
 
         }
 
@@ -91,10 +116,24 @@ namespace apk_user
         {
             if(dataGridView1.Columns[e.ColumnIndex].Name == "Zabukuj")
             {
-                       if(MessageBox.Show("Czy chcesz zabukować ten lot?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
-                       {
-                          
-                       }
+                if(MessageBox.Show("Czy chcesz zabukować ten lot?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
+                {
+                    Console.WriteLine(id);
+                    cn.Open();
+                    // tutaj trzeba pobrać dane lotu aby Muc (hehe) je wypełnić w kodzie poniżej i dodać do tablicy zabukowane
+
+                    SqlCommand cmdinsert = new SqlCommand();
+                    cmdinsert.Connection = cn;
+                    cmdinsert.CommandText = "INSERT INTO zabukowane (userid,idlotu,miejsce,cenabagazu,cenabiletu) Values (@pam1,@pam2,@pam3,@pam4,@pam5)";
+                    cmdinsert.Parameters.AddWithValue("@pam1", id);
+                   // cmdinsert.Parameters.AddWithValue("@pam2", idlotu);
+                    //cmdinsert.Parameters.AddWithValue("@pam3", miejsce);
+                    //cmdinsert.Parameters.AddWithValue("@pam4", cenabagazu);
+                   // cmdinsert.Parameters.AddWithValue("@pam5", cenabiletu);
+                   // cmdinsert.CommandType = CommandType.Text;
+                   //  cmdinsert.ExecuteNonQuery();
+                    cn.Close();
+                }
             }
         }
     }

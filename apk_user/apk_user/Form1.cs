@@ -49,6 +49,18 @@ namespace apk_user
                 Console.WriteLine("Brak użytkownika");
 
             }
+            apk_user.wyszlotow f3 = new apk_user.wyszlotow();
+            string c = username;
+            string d = user_password;
+            if (a != null)
+            {
+                f3.Userd_id(c.ToString(), d.ToString());
+            }
+            else
+            {
+                Console.WriteLine("Brak użytkownika");
+
+            }
         }
         
 
