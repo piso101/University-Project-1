@@ -29,35 +29,24 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.userdisplay = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 71);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 2);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(664, 339);
+            this.dataGridView1.Size = new System.Drawing.Size(664, 408);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // userdisplay
-            // 
-            this.userdisplay.AutoSize = true;
-            this.userdisplay.Location = new System.Drawing.Point(344, 22);
-            this.userdisplay.Name = "userdisplay";
-            this.userdisplay.Size = new System.Drawing.Size(35, 13);
-            this.userdisplay.TabIndex = 1;
-            this.userdisplay.Text = "label1";
             // 
             // zabukowaneuser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.userdisplay);
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "zabukowaneuser";
@@ -65,13 +54,11 @@
             this.Load += new System.EventHandler(this.zabukowaneuser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label userdisplay;
     }
 }
