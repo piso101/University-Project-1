@@ -63,7 +63,14 @@ namespace apk_user
             apk_user.zabukowaneuser f2 = new apk_user.zabukowaneuser();
             string a = username;
             string b = user_password;
-            f2.userdid(a.ToString(), b.ToString());
+            if(a != null){
+                f2.userdid(a.ToString(), b.ToString());
+            }
+            else
+            {
+                Console.WriteLine("Brak użytkownika");
+
+            }
 
         }
 
