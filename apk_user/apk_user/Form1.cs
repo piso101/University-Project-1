@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace apk_user
 {
@@ -20,10 +21,15 @@ namespace apk_user
         }
         private SqlConnection conn = new SqlConnection(@"Server=tcp:projektprogramowanie.database.windows.net,1433;Initial Catalog=projekt;Persist Security Info=False;User ID=piso101;Password=Password1!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
-        public void userdisplay(string a)
+        public static string username;
+        public static string user_password;
+
+        public void userdisplay(string a, string b)
         {
-            string username = a.ToString();
+            username = a.ToString();
+            user_password = b.ToString();
             logindisplay.Text = "Witaj, " + username;
+            
 
         }
         public void Form1_Load(object sender, EventArgs e)
@@ -49,11 +55,15 @@ namespace apk_user
             
         }
 
-        private void mojelotybtn_Click(object sender, EventArgs e)
+        public void mojelotybtn_Click(object sender, EventArgs e)
         {
             wyszlotow1.Hide();
             zabukowaneuser1.Show();
             zabukowaneuser1.BringToFront();
+            apk_user.zabukowaneuser f2 = new apk_user.zabukowaneuser();
+            string a = username;
+            string b = user_password;
+            f2.userdid(a.ToString(), b.ToString());
 
         }
 
