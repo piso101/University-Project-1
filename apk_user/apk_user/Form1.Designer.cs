@@ -92,16 +92,17 @@
             // 
             // wyszlotow1
             // 
-            this.wyszlotow1.Location = new System.Drawing.Point(237, 12);
+            this.wyszlotow1.Location = new System.Drawing.Point(233, 11);
             this.wyszlotow1.Name = "wyszlotow1";
-            this.wyszlotow1.Size = new System.Drawing.Size(782, 435);
+            this.wyszlotow1.Size = new System.Drawing.Size(797, 449);
             this.wyszlotow1.TabIndex = 5;
             // 
             // zabukowaneuser1
             // 
-            this.zabukowaneuser1.Location = new System.Drawing.Point(237, 12);
+            this.zabukowaneuser1.Location = new System.Drawing.Point(233, 11);
+            this.zabukowaneuser1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.zabukowaneuser1.Name = "zabukowaneuser1";
-            this.zabukowaneuser1.Size = new System.Drawing.Size(793, 449);
+            this.zabukowaneuser1.Size = new System.Drawing.Size(778, 427);
             this.zabukowaneuser1.TabIndex = 6;
             this.zabukowaneuser1.Load += new System.EventHandler(this.zabukowaneuser1_Load);
             // 
@@ -110,9 +111,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1042, 473);
-            this.Controls.Add(this.zabukowaneuser1);
-            this.Controls.Add(this.wyszlotow1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.wyszlotow1);
+            this.Controls.Add(this.zabukowaneuser1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
