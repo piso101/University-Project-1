@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usersokno));
             this.usersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.projektDataSet = new apk.admin.projektDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -45,7 +43,13 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.usersBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.odswiezbtn = new System.Windows.Forms.ToolStripButton();
             this.usersDataGridView = new System.Windows.Forms.DataGridView();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.projektDataSet = new apk.admin.projektDataSet();
+            this.usersTableAdapter = new apk.admin.projektDataSetTableAdapters.usersTableAdapter();
+            this.tableAdapterManager = new apk.admin.projektDataSetTableAdapters.TableAdapterManager();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,15 +57,11 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.usersTableAdapter = new apk.admin.projektDataSetTableAdapters.usersTableAdapter();
-            this.tableAdapterManager = new apk.admin.projektDataSetTableAdapters.TableAdapterManager();
-            this.odswiezbtn = new System.Windows.Forms.ToolStripButton();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingNavigator)).BeginInit();
             this.usersBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // usersBindingNavigator
@@ -107,21 +107,11 @@
             this.bindingNavigatorAddNewItem.Text = "Dodaj nowy";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "users";
-            this.usersBindingSource.DataSource = this.projektDataSet;
-            // 
-            // projektDataSet
-            // 
-            this.projektDataSet.DataSetName = "projektDataSet";
-            this.projektDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(38, 28);
-            this.bindingNavigatorCountItem.Text = "z {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 28);
+            this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Suma elementów";
             // 
             // bindingNavigatorDeleteItem
@@ -203,6 +193,16 @@
             this.usersBindingNavigatorSaveItem.Text = "Zapisz dane";
             this.usersBindingNavigatorSaveItem.Click += new System.EventHandler(this.usersBindingNavigatorSaveItem_Click);
             // 
+            // odswiezbtn
+            // 
+            this.odswiezbtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.odswiezbtn.Image = ((System.Drawing.Image)(resources.GetObject("odswiezbtn.Image")));
+            this.odswiezbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.odswiezbtn.Name = "odswiezbtn";
+            this.odswiezbtn.Size = new System.Drawing.Size(29, 28);
+            this.odswiezbtn.Text = "toolStripButton1";
+            this.odswiezbtn.Click += new System.EventHandler(this.odswiezbtn_Click);
+            // 
             // usersDataGridView
             // 
             this.usersDataGridView.AutoGenerateColumns = false;
@@ -224,6 +224,7 @@
             this.usersDataGridView.Location = new System.Drawing.Point(-2, 28);
             this.usersDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.usersDataGridView.Name = "usersDataGridView";
+            this.usersDataGridView.RowHeadersVisible = false;
             this.usersDataGridView.RowHeadersWidth = 62;
             this.usersDataGridView.RowTemplate.Height = 28;
             this.usersDataGridView.Size = new System.Drawing.Size(1061, 563);
@@ -231,12 +232,40 @@
             this.usersDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersDataGridView_CellContentClick);
             this.usersDataGridView.Sorted += new System.EventHandler(this.usersBindingNavigatorSaveItem_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "users";
+            this.usersBindingSource.DataSource = this.projektDataSet;
+            // 
+            // projektDataSet
+            // 
+            this.projektDataSet.DataSetName = "projektDataSet";
+            this.projektDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usersTableAdapter
+            // 
+            this.usersTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.lotyTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = apk.admin.projektDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.usersTableAdapter = this.usersTableAdapter;
+            this.tableAdapterManager.zabukowaneTableAdapter = null;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "userid";
             this.dataGridViewTextBoxColumn1.HeaderText = "userid";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 73;
             // 
             // dataGridViewTextBoxColumn2
@@ -287,33 +316,6 @@
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.Width = 70;
             // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.lotyTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = apk.admin.projektDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.usersTableAdapter = this.usersTableAdapter;
-            this.tableAdapterManager.zabukowaneTableAdapter = null;
-            // 
-            // odswiezbtn
-            // 
-            this.odswiezbtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.odswiezbtn.Image = ((System.Drawing.Image)(resources.GetObject("odswiezbtn.Image")));
-            this.odswiezbtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.odswiezbtn.Name = "odswiezbtn";
-            this.odswiezbtn.Size = new System.Drawing.Size(29, 28);
-            this.odswiezbtn.Text = "toolStripButton1";
-            this.odswiezbtn.Click += new System.EventHandler(this.odswiezbtn_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // usersokno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -330,9 +332,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingNavigator)).EndInit();
             this.usersBindingNavigator.ResumeLayout(false);
             this.usersBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.projektDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,6 +360,8 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton usersBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView usersDataGridView;
+        private System.Windows.Forms.ToolStripButton odswiezbtn;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -365,7 +369,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.ToolStripButton odswiezbtn;
-        private System.Windows.Forms.Timer timer1;
     }
 }
