@@ -25,8 +25,9 @@ namespace apk_user
         private SqlConnection conn = new SqlConnection(Properties.Settings.Default.projektConnectionString);
         public static string username;
         public static string user_password;
-        public void userdid(string a, string b)
+        public void Userd_id(string a, string b)
         {
+            Console.WriteLine("1");
             username = a.ToString();
             user_password = b.ToString();
             string command = "SELECT userid FROM users WHERE login_text = '" + username + "' AND haslo = '" + user_password + "'";
@@ -40,20 +41,22 @@ namespace apk_user
             {
                 userid = reader["userid"].ToString();
             }
-
+            
+            id = int.Parse(userid);
             reader.Close();
             
 
         }
 
-        private void zabukowaneuser_Load(object sender, EventArgs e)
+        public void zabukowaneuser_Load(object sender, EventArgs e)
         {
+            Console.WriteLine("2");
             
-            
-            Console.WriteLine(id);
+
             SqlCommand cmdid = new SqlCommand();
             cmdid.Connection = conn;
-            cmdid.CommandText = "SELECT * FROM zabukowane WHERE userid = @id ";
+            cmdid.CommandText = "SELECT *\r\nFROM zabukowane\r\n WHERE userid = @id ";
+            Console.WriteLine(id);
             cmdid.Parameters.AddWithValue("@id", id);
 
             DataTable data1 = new DataTable();
@@ -63,6 +66,9 @@ namespace apk_user
             conn.Close();
         }
 
-        
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
     }
 }
