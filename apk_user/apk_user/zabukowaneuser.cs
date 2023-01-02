@@ -21,6 +21,7 @@ namespace apk_user
             
 
         }
+        public static int id;
         private SqlConnection conn = new SqlConnection(@"Server=tcp:projektprogramowanie.database.windows.net,1433;Initial Catalog=projekt;Persist Security Info=False;User ID=piso101;Password=Password1!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
         public static string username;
         public static string user_password;
@@ -39,21 +40,27 @@ namespace apk_user
             {
                 userid = reader["userid"].ToString();
             }
-            
-            string commandid = "SELECT * FROM zabukowane WHERE userid = '" + userid + "'";
-            SqlCommand cmdid = new SqlCommand(commandid, conn);
+
             reader.Close();
-            DataTable data1 = new DataTable();
-            SqlDataAdapter adapter1 = new SqlDataAdapter(cmdid);
-            adapter1.Fill(data1);
-            dataGridView2.DataSource = data1;
-            conn.Close();
+            
 
         }
 
         private void zabukowaneuser_Load(object sender, EventArgs e)
         {
             
+            
+            Console.WriteLine(id);
+            SqlCommand cmdid = new SqlCommand();
+            cmdid.Connection = conn;
+            cmdid.CommandText = "SELECT * FROM zabukowane WHERE userid = @id ";
+            cmdid.Parameters.AddWithValue("@id", id);
+
+            DataTable data1 = new DataTable();
+            SqlDataAdapter adapter1 = new SqlDataAdapter(cmdid);
+            adapter1.Fill(data1);
+            dataGridView2.DataSource = data1;
+            conn.Close();
         }
 
         
