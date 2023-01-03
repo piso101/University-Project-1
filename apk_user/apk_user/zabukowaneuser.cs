@@ -43,7 +43,6 @@ namespace apk_user
             
             id = int.Parse(userid);
             reader.Close();
-            
 
         }
 
