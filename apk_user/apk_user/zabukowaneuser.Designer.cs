@@ -56,20 +56,22 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(2, 49);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView2.Location = new System.Drawing.Point(3, 60);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(582, 303);
+            this.dataGridView2.Size = new System.Drawing.Size(776, 373);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(3, 12);
+            this.button1.Location = new System.Drawing.Point(4, 15);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 1;
             this.button1.Text = "Odśwież";
             this.button1.UseVisualStyleBackColor = true;
@@ -77,13 +79,13 @@
             // 
             // zabukowaneuser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "zabukowaneuser";
-            this.Size = new System.Drawing.Size(586, 353);
+            this.Size = new System.Drawing.Size(781, 434);
             this.Load += new System.EventHandler(this.zabukowaneuser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.projektDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zabukowaneBindingSource)).EndInit();

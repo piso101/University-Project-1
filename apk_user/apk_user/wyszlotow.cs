@@ -145,5 +145,10 @@ namespace apk_user
                 }
             }
         }
+
+        private void cena_bag_box_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
