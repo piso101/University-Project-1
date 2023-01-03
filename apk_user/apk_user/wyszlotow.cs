@@ -124,7 +124,8 @@ namespace apk_user
                     if(cena_bag_box.Text=="")//sprawdza czy cena bagażu została wybrana
                     {
                         MessageBox.Show("Proszę wybrać cenę bagażu");
-                        break;//Trzeba jakoś zCancelować cały event ale nw jak atm :(
+                        return;//Trzeba jakoś zCancelować cały event ale nw jak atm :(
+                        
                     }
                     else if(cena_bag_box.Text == "Mały - 150zł")
                     {
@@ -142,37 +143,63 @@ namespace apk_user
                 {
 
                     cn.Open();
-                    // tutaj trzeba pobrać dane lotu aby Muc (hehe) je wypełnić w kodzie poniżej i dodać do tablicy zabukowane
-
 
                     if (e.RowIndex >= 0)
                     {
-                        DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                        DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];//pobieramy row który chcemy zabukować
+                        //pobieramy informacje z row które potrzebujemy
                         string idlotu = row.Cells["idlotu"].Value.ToString();
                         string cenabiletu = row.Cells["cena"].Value.ToString();
                         string iloscmiejsc = row.Cells["dostepnemiejsca"].Value.ToString();
                         int miejsce = int.Parse(iloscmiejsc);
+
                         SqlCommand cmdinsert = new SqlCommand();
                         cmdinsert.Connection = cn;
                         cmdinsert.CommandText = "INSERT INTO zabukowane (userid,idlotu,miejsce,cenabagazu,cenabiletu) Values (@pam1,@pam2,@pam3,@pam4,@pam5)";
+                        //dodajemy wartości do komendy sql
                         cmdinsert.Parameters.AddWithValue("@pam1", id);
-                        Console.WriteLine("id usera: " + id);
                         cmdinsert.Parameters.AddWithValue("@pam2", idlotu);
-                        Console.WriteLine("id lotu: " + idlotu);
                         cmdinsert.Parameters.AddWithValue("@pam3", miejsce);
-                        Console.WriteLine("miejsce: " + miejsce);
                         cmdinsert.Parameters.AddWithValue("@pam4", cenabagazu);
-                        Console.WriteLine("cena bagażu: "+cenabagazu);
                         cmdinsert.Parameters.AddWithValue("@pam5", cenabiletu);
-                        Console.WriteLine("cena biletu: "+cenabiletu);
-                        Console.WriteLine("ilosc miejsc: " + iloscmiejsc);
                         cmdinsert.CommandType = CommandType.Text;
-                        cmdinsert.ExecuteNonQuery();
-                        cn.Close();
+                        cmdinsert.ExecuteNonQuery();//wykonujemy komende dodania rekordu w tablicy zabukowane
+
+                        miejsce -= 1;//odejmujemy miejsce
+                        SqlCommand cmdupdate = new SqlCommand();//tworzymy nową komendę do obniżenia wartości ilości miejsc dla danego lotu
+                        cmdupdate.Connection = cn;
+                        cmdupdate.CommandText = "UPDATE loty SET dostepnemiejsca = @pam1 WHERE idlotu = @pam2";
+                        cmdupdate.Parameters.AddWithValue("@pam1", miejsce);
+                        cmdupdate.Parameters.AddWithValue("@pam2", idlotu);
+                        cmdupdate.ExecuteNonQuery();// wykonujemy komende
+
+                        cn.Close();// trzeba zamknąć połączenie przed następną linijką kodu
+                        loadbtn.PerformClick();//odświeżamy datagridview aby wyświetlił prawidłową ilość miejsc
+                        
                     }
                 }
             }
 
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void skadbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dokadbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fromdate_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }
