@@ -49,7 +49,17 @@ namespace apk_user
 
         public void zabukowaneuser_Load(object sender, EventArgs e)
         {
-            
+            SqlCommand cmdid = new SqlCommand();
+            cmdid.Connection = conn;
+            cmdid.CommandText = "SELECT *\r\nFROM zabukowane\r\n WHERE userid = @id ";
+            Console.WriteLine(id);
+            cmdid.Parameters.AddWithValue("@id", id);
+
+            DataTable data1 = new DataTable();
+            SqlDataAdapter adapter1 = new SqlDataAdapter(cmdid);
+            adapter1.Fill(data1);
+            dataGridView2.DataSource = data1;
+            conn.Close();
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -59,6 +69,7 @@ namespace apk_user
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             SqlCommand cmdid = new SqlCommand();
             cmdid.Connection = conn;
             cmdid.CommandText = "SELECT *\r\nFROM zabukowane\r\n WHERE userid = @id ";
