@@ -32,8 +32,13 @@
             this.projektDataSet = new apk_user.projektDataSet();
             this.zabukowaneBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.zabukowaneTableAdapter = new apk_user.projektDataSetTableAdapters.zabukowaneTableAdapter();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.idlotu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miejsceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cenabagazuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cenabiletuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.projektDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.zabukowaneBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -53,19 +58,6 @@
             // 
             this.zabukowaneTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 60);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(776, 373);
-            this.dataGridView2.TabIndex = 0;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(4, 15);
@@ -76,6 +68,73 @@
             this.button1.Text = "Odśwież";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idlotu,
+            this.miejsceDataGridViewTextBoxColumn,
+            this.userid,
+            this.cenabagazuDataGridViewTextBoxColumn,
+            this.cenabiletuDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.zabukowaneBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(5, 49);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(776, 373);
+            this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // idlotu
+            // 
+            this.idlotu.DataPropertyName = "idlotu";
+            this.idlotu.HeaderText = "idlotu";
+            this.idlotu.MinimumWidth = 6;
+            this.idlotu.Name = "idlotu";
+            this.idlotu.ReadOnly = true;
+            this.idlotu.Width = 68;
+            // 
+            // miejsceDataGridViewTextBoxColumn
+            // 
+            this.miejsceDataGridViewTextBoxColumn.DataPropertyName = "miejsce";
+            this.miejsceDataGridViewTextBoxColumn.HeaderText = "miejsce";
+            this.miejsceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.miejsceDataGridViewTextBoxColumn.Name = "miejsceDataGridViewTextBoxColumn";
+            this.miejsceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.miejsceDataGridViewTextBoxColumn.Width = 83;
+            // 
+            // userid
+            // 
+            this.userid.DataPropertyName = "userid";
+            this.userid.HeaderText = "userid";
+            this.userid.MinimumWidth = 6;
+            this.userid.Name = "userid";
+            this.userid.ReadOnly = true;
+            this.userid.Width = 73;
+            // 
+            // cenabagazuDataGridViewTextBoxColumn
+            // 
+            this.cenabagazuDataGridViewTextBoxColumn.DataPropertyName = "cenabagazu";
+            this.cenabagazuDataGridViewTextBoxColumn.HeaderText = "cenabagazu";
+            this.cenabagazuDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cenabagazuDataGridViewTextBoxColumn.Name = "cenabagazuDataGridViewTextBoxColumn";
+            this.cenabagazuDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cenabagazuDataGridViewTextBoxColumn.Width = 111;
+            // 
+            // cenabiletuDataGridViewTextBoxColumn
+            // 
+            this.cenabiletuDataGridViewTextBoxColumn.DataPropertyName = "cenabiletu";
+            this.cenabiletuDataGridViewTextBoxColumn.HeaderText = "cenabiletu";
+            this.cenabiletuDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cenabiletuDataGridViewTextBoxColumn.Name = "cenabiletuDataGridViewTextBoxColumn";
+            this.cenabiletuDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cenabiletuDataGridViewTextBoxColumn.Width = 98;
             // 
             // zabukowaneuser
             // 
@@ -98,7 +157,12 @@
         private projektDataSet projektDataSet;
         private System.Windows.Forms.BindingSource zabukowaneBindingSource;
         private projektDataSetTableAdapters.zabukowaneTableAdapter zabukowaneTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idlotu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn miejsceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cenabagazuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cenabiletuDataGridViewTextBoxColumn;
     }
 }
