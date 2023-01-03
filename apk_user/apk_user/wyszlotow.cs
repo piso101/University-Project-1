@@ -73,7 +73,7 @@ namespace apk_user
                 //tworze komende select i odwoluje ja do bazy danych
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = cn;
-                cmd.CommandText = "SELECT loty.skad,loty.dokad,loty.dataodlotu, loty.dlugosclotu, loty.cena,loty.dostepnemiejsca\r\nFROM loty\r\nWHERE loty.dostepnemiejsca>0 AND loty.skad = @skad AND loty.dokad = @dokad AND loty.dataodlotu BETWEEN @fromdate AND @todate";
+                cmd.CommandText = "SELECT loty.idlotu, loty.skad,loty.dokad,loty.dataodlotu, loty.dlugosclotu, loty.cena,loty.dostepnemiejsca\r\nFROM loty\r\nWHERE loty.dostepnemiejsca>0 AND loty.skad = @skad AND loty.dokad = @dokad AND loty.dataodlotu BETWEEN @fromdate AND @todate";
                 cmd.Parameters.AddWithValue("@fromdate", fromdate.Value);
                 cmd.Parameters.AddWithValue("@todate", todate.Value);
                 cmd.Parameters.AddWithValue("@skad", skadbox.Text);
@@ -85,10 +85,11 @@ namespace apk_user
                 adapter.Fill(data);
                 //pokazuje baze danych w datagridview
                 dataGridView1.DataSource = data;
-                
+
                 DataGridViewButtonColumn zabukujbtn = new DataGridViewButtonColumn();
                 zabukujbtn.Name = "Zabukuj";
                 zabukujbtn.Text = "Zabukuj";
+                zabukujbtn.UseColumnTextForButtonValue = true;
                 int len = dataGridView1.Columns.Count;
                 dataGridView1.Columns.Insert(len, zabukujbtn);
                 cn.Close();
@@ -114,40 +115,64 @@ namespace apk_user
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dataGridView1.Columns[e.ColumnIndex].Name == "Zabukuj")
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Zabukuj")
             {
-                if(MessageBox.Show("Czy chcesz zabukować ten lot?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
+                int cenabagazu = 0;
+                bool cenatest = false;
+                while(cenatest == false) 
+                { 
+                    if(cena_bag_box.Text=="")//sprawdza czy cena bagażu została wybrana
+                    {
+                        MessageBox.Show("Proszę wybrać cenę bagażu");
+                        break;//Trzeba jakoś zCancelować cały event ale nw jak atm :(
+                    }
+                    else if(cena_bag_box.Text == "Mały - 150zł")
+                    {
+                        cenabagazu = 150;
+                        cenatest = true;
+                    }
+                    else if (cena_bag_box.Text == "Duży - 200zł")
+                    {
+                        cenabagazu = 200;
+                        cenatest = true;
+                    }
+                    
+                }
+                if (MessageBox.Show("Czy chcesz zabukować ten lot?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    Console.WriteLine(id);
+
                     cn.Open();
                     // tutaj trzeba pobrać dane lotu aby Muc (hehe) je wypełnić w kodzie poniżej i dodać do tablicy zabukowane
-                    string test1 = dataGridView1.Columns[1].ToString();
-                        Console.WriteLine(test1);
-                    string test2 = dataGridView1.Columns[2].ToString();
-                    Console.WriteLine(test2);
-                    string test3 = dataGridView1.Columns[3].ToString();
-                    Console.WriteLine(test3);
-                    string test4 = dataGridView1.Columns[4].ToString();
-                    Console.WriteLine(test4);
-                    string test5 = dataGridView1.Columns[5].ToString();
-                    Console.WriteLine(test5);
-                    SqlCommand cmdinsert = new SqlCommand();
-                    cmdinsert.Connection = cn;
-                    cmdinsert.CommandText = "INSERT INTO zabukowane (userid,idlotu,miejsce,cenabagazu,cenabiletu) Values (@pam1,@pam2,@pam3,@pam4,@pam5)";
-                    cmdinsert.Parameters.AddWithValue("@pam1", id);
-                   // cmdinsert.Parameters.AddWithValue("@pam2", idlotu);
-                    //cmdinsert.Parameters.AddWithValue("@pam3", miejsce);
-                    //cmdinsert.Parameters.AddWithValue("@pam4", cenabagazu);
-                   // cmdinsert.Parameters.AddWithValue("@pam5", cenabiletu);
-                   // cmdinsert.CommandType = CommandType.Text;
-                   //  cmdinsert.ExecuteNonQuery();
-                    cn.Close();
+
+
+                    if (e.RowIndex >= 0)
+                    {
+                        DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                        string idlotu = row.Cells["idlotu"].Value.ToString();
+                        string cenabiletu = row.Cells["cena"].Value.ToString();
+                        string iloscmiejsc = row.Cells["dostepnemiejsca"].Value.ToString();
+                        int miejsce = int.Parse(iloscmiejsc);
+                        SqlCommand cmdinsert = new SqlCommand();
+                        cmdinsert.Connection = cn;
+                        cmdinsert.CommandText = "INSERT INTO zabukowane (userid,idlotu,miejsce,cenabagazu,cenabiletu) Values (@pam1,@pam2,@pam3,@pam4,@pam5)";
+                        cmdinsert.Parameters.AddWithValue("@pam1", id);
+                        Console.WriteLine("id usera: " + id);
+                        cmdinsert.Parameters.AddWithValue("@pam2", idlotu);
+                        Console.WriteLine("id lotu: " + idlotu);
+                        cmdinsert.Parameters.AddWithValue("@pam3", miejsce);
+                        Console.WriteLine("miejsce: " + miejsce);
+                        cmdinsert.Parameters.AddWithValue("@pam4", cenabagazu);
+                        Console.WriteLine("cena bagażu: "+cenabagazu);
+                        cmdinsert.Parameters.AddWithValue("@pam5", cenabiletu);
+                        Console.WriteLine("cena biletu: "+cenabiletu);
+                        Console.WriteLine("ilosc miejsc: " + iloscmiejsc);
+                        cmdinsert.CommandType = CommandType.Text;
+                        cmdinsert.ExecuteNonQuery();
+                        cn.Close();
+                    }
                 }
             }
-        }
 
-        private void cena_bag_box_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
     }
