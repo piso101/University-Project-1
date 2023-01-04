@@ -175,7 +175,10 @@ namespace apk_user
 
                         cn.Close();// trzeba zamknąć połączenie przed następną linijką kodu
                         loadbtn.PerformClick();//odświeżamy datagridview aby wyświetlił prawidłową ilość miejsc
-                        
+                        apk_user.zabukowaneuser f2 = new apk_user.zabukowaneuser();
+
+                        f2.przycisk();
+
                     }
                 }
             }

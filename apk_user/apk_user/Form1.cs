@@ -37,22 +37,12 @@ namespace apk_user
         }
         public void Form1_Load(object sender, EventArgs e)
         {
-            apk_user.zabukowaneuser f2 = new apk_user.zabukowaneuser();
-            string a = username;
-            string b = user_password;
-            if (a != null)
-            {
-                f2.Userd_id(a.ToString(), b.ToString());
-            }
-            else
-            {
-                Console.WriteLine("Brak użytkownika");
-
-            }
+            
+           
             apk_user.wyszlotow f3 = new apk_user.wyszlotow();
             string c = username;
             string d = user_password;
-            if (a != null)
+            if (c != null)
             {
                 f3.Userd_id(c.ToString(), d.ToString());
             }

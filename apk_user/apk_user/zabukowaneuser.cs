@@ -23,12 +23,13 @@ namespace apk_user
         }
         public static int id;
         private SqlConnection conn = new SqlConnection(@"Server=tcp:projektprogramowanie.database.windows.net,1433;Initial Catalog=projekt;Persist Security Info=False;User ID=piso101;Password=Password1!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
-        public static string username;
-        public static string user_password;
-        public void Userd_id(string a, string b)
+        
+
+        public void zabukowaneuser_Load(object sender, EventArgs e)
         {
-            username = a.ToString();
-            user_password = b.ToString();
+            string username = Form1.username;
+            string user_password = Form1.user_password;
+            
             string command = "SELECT userid FROM users WHERE login_text = '" + username + "' AND haslo = '" + user_password + "'";
             conn.Open();
             SqlCommand cmd = new SqlCommand(command, conn);
@@ -40,14 +41,9 @@ namespace apk_user
             {
                 userid = reader["userid"].ToString();
             }
-            
-            id = int.Parse(userid);
             reader.Close();
-
-        }
-
-        public void zabukowaneuser_Load(object sender, EventArgs e)
-        {
+            id = int.Parse(userid);
+            
             SqlCommand cmdid = new SqlCommand();
             cmdid.Connection = conn;
             cmdid.CommandText = "SELECT *\r\nFROM zabukowane\r\n WHERE userid = @id ";
@@ -65,10 +61,17 @@ namespace apk_user
         {
             
         }
+        public void przycisk()
+        {
+            button1.PerformClick();
+            Console.WriteLine("klikam");
+
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Console.WriteLine("klikam");
             SqlCommand cmdid = new SqlCommand();
             cmdid.Connection = conn;
             cmdid.CommandText = "SELECT *\r\nFROM zabukowane\r\n WHERE userid = @id ";
