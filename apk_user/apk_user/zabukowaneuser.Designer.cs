@@ -60,10 +60,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(4, 15);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(3, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "Odśwież";
             this.button1.UseVisualStyleBackColor = true;
@@ -81,13 +80,13 @@
             this.cenabagazuDataGridViewTextBoxColumn,
             this.cenabiletuDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.zabukowaneBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(5, 49);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView2.Location = new System.Drawing.Point(4, 12);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(776, 373);
+            this.dataGridView2.Size = new System.Drawing.Size(582, 331);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -98,7 +97,7 @@
             this.idlotu.MinimumWidth = 6;
             this.idlotu.Name = "idlotu";
             this.idlotu.ReadOnly = true;
-            this.idlotu.Width = 68;
+            this.idlotu.Width = 57;
             // 
             // miejsceDataGridViewTextBoxColumn
             // 
@@ -107,7 +106,7 @@
             this.miejsceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.miejsceDataGridViewTextBoxColumn.Name = "miejsceDataGridViewTextBoxColumn";
             this.miejsceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.miejsceDataGridViewTextBoxColumn.Width = 83;
+            this.miejsceDataGridViewTextBoxColumn.Width = 67;
             // 
             // userid
             // 
@@ -116,7 +115,7 @@
             this.userid.MinimumWidth = 6;
             this.userid.Name = "userid";
             this.userid.ReadOnly = true;
-            this.userid.Width = 73;
+            this.userid.Width = 60;
             // 
             // cenabagazuDataGridViewTextBoxColumn
             // 
@@ -125,7 +124,7 @@
             this.cenabagazuDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cenabagazuDataGridViewTextBoxColumn.Name = "cenabagazuDataGridViewTextBoxColumn";
             this.cenabagazuDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cenabagazuDataGridViewTextBoxColumn.Width = 111;
+            this.cenabagazuDataGridViewTextBoxColumn.Width = 91;
             // 
             // cenabiletuDataGridViewTextBoxColumn
             // 
@@ -134,17 +133,17 @@
             this.cenabiletuDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cenabiletuDataGridViewTextBoxColumn.Name = "cenabiletuDataGridViewTextBoxColumn";
             this.cenabiletuDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cenabiletuDataGridViewTextBoxColumn.Width = 98;
+            this.cenabiletuDataGridViewTextBoxColumn.Width = 81;
             // 
             // zabukowaneuser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView2);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "zabukowaneuser";
-            this.Size = new System.Drawing.Size(781, 434);
+            this.Size = new System.Drawing.Size(586, 353);
             this.Load += new System.EventHandler(this.zabukowaneuser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.projektDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zabukowaneBindingSource)).EndInit();
