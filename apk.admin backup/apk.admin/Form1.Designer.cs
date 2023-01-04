@@ -35,9 +35,9 @@
             this.usersbtn = new System.Windows.Forms.Button();
             this.lotybtn = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lotyokno = new apk.admin.lotypoprawa2();
             this.usersokno = new apk.admin.usersokno();
             this.zabukowaneokno1 = new apk.admin.zabukowaneokno();
-            this.lotyokno = new apk.admin.lotypoprawa2();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -66,12 +66,12 @@
             // 
             // zabukowanebtn
             // 
-            this.zabukowanebtn.BackColor = System.Drawing.Color.PowderBlue;
+            this.zabukowanebtn.BackColor = System.Drawing.Color.DarkCyan;
             this.zabukowanebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.zabukowanebtn.Location = new System.Drawing.Point(12, 91);
             this.zabukowanebtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.zabukowanebtn.Name = "zabukowanebtn";
-            this.zabukowanebtn.Size = new System.Drawing.Size(155, 36);
+            this.zabukowanebtn.Size = new System.Drawing.Size(155, 34);
             this.zabukowanebtn.TabIndex = 4;
             this.zabukowanebtn.Text = "Zabukowane";
             this.zabukowanebtn.UseVisualStyleBackColor = false;
@@ -79,13 +79,13 @@
             // 
             // usersbtn
             // 
-            this.usersbtn.BackColor = System.Drawing.Color.Transparent;
+            this.usersbtn.BackColor = System.Drawing.Color.DarkCyan;
             this.usersbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.usersbtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.usersbtn.Location = new System.Drawing.Point(12, 51);
             this.usersbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.usersbtn.Name = "usersbtn";
-            this.usersbtn.Size = new System.Drawing.Size(155, 36);
+            this.usersbtn.Size = new System.Drawing.Size(155, 34);
             this.usersbtn.TabIndex = 3;
             this.usersbtn.Text = "Użytkownicy";
             this.usersbtn.UseVisualStyleBackColor = false;
@@ -93,12 +93,12 @@
             // 
             // lotybtn
             // 
-            this.lotybtn.BackColor = System.Drawing.Color.PowderBlue;
+            this.lotybtn.BackColor = System.Drawing.Color.DarkCyan;
             this.lotybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lotybtn.Location = new System.Drawing.Point(12, 11);
             this.lotybtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lotybtn.Name = "lotybtn";
-            this.lotybtn.Size = new System.Drawing.Size(155, 36);
+            this.lotybtn.Size = new System.Drawing.Size(155, 34);
             this.lotybtn.TabIndex = 2;
             this.lotybtn.Text = "Loty";
             this.lotybtn.UseVisualStyleBackColor = false;
@@ -112,6 +112,17 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(7, 6);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
+            // lotyokno
+            // 
+            this.lotyokno.AutoSize = true;
+            this.lotyokno.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.lotyokno.BackColor = System.Drawing.Color.Transparent;
+            this.lotyokno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.lotyokno.Location = new System.Drawing.Point(173, 0);
+            this.lotyokno.Name = "lotyokno";
+            this.lotyokno.Size = new System.Drawing.Size(1097, 558);
+            this.lotyokno.TabIndex = 5;
+            // 
             // usersokno
             // 
             this.usersokno.AutoSize = true;
@@ -123,7 +134,7 @@
             this.usersokno.Location = new System.Drawing.Point(173, 0);
             this.usersokno.Margin = new System.Windows.Forms.Padding(0);
             this.usersokno.Name = "usersokno";
-            this.usersokno.Size = new System.Drawing.Size(1062, 593);
+            this.usersokno.Size = new System.Drawing.Size(1062, 600);
             this.usersokno.TabIndex = 3;
             this.usersokno.Load += new System.EventHandler(this.usersokno_Load);
             // 
@@ -138,17 +149,6 @@
             this.zabukowaneokno1.Name = "zabukowaneokno1";
             this.zabukowaneokno1.Size = new System.Drawing.Size(1060, 605);
             this.zabukowaneokno1.TabIndex = 4;
-            // 
-            // lotyokno
-            // 
-            this.lotyokno.AutoSize = true;
-            this.lotyokno.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.lotyokno.BackColor = System.Drawing.Color.Transparent;
-            this.lotyokno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.lotyokno.Location = new System.Drawing.Point(173, 0);
-            this.lotyokno.Name = "lotyokno";
-            this.lotyokno.Size = new System.Drawing.Size(1097, 558);
-            this.lotyokno.TabIndex = 5;
             // 
             // Form1
             // 

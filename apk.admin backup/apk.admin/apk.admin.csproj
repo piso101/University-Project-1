@@ -71,7 +71,6 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Plugin.InputKit, Version=4.1.6.0, Culture=neutral, processorArchitecture=MSIL">
@@ -172,6 +171,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="lotyokno.resx">
       <DependentUpon>lotyokno.cs</DependentUpon>
@@ -236,6 +236,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\unnamed%281%29.png" />
+    <None Include="Resources\Plane.png" />
     <Content Include="XSLTFile1.xslt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
