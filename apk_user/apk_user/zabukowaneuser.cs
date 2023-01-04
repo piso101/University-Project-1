@@ -43,17 +43,8 @@ namespace apk_user
             }
             reader.Close();
             id = int.Parse(userid);
-            
-            SqlCommand cmdid = new SqlCommand();
-            cmdid.Connection = conn;
-            cmdid.CommandText = "SELECT *\r\nFROM zabukowane\r\n WHERE userid = @id ";
-            Console.WriteLine(id);
-            cmdid.Parameters.AddWithValue("@id", id);
 
-            DataTable data1 = new DataTable();
-            SqlDataAdapter adapter1 = new SqlDataAdapter(cmdid);
-            adapter1.Fill(data1);
-            dataGridView2.DataSource = data1;
+            button1.PerformClick();
             conn.Close();
         }
 
@@ -64,13 +55,19 @@ namespace apk_user
         public void przycisk()
         {
             button1.PerformClick();
-            Console.WriteLine("klikam");
+            
 
         }
 
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(conn.State != ConnectionState.Open)
+            {
+                conn.Open();
+                Console.WriteLine("otwieram połączenie");
+            }
+            
             Console.WriteLine("klikam");
             SqlCommand cmdid = new SqlCommand();
             cmdid.Connection = conn;
@@ -82,6 +79,7 @@ namespace apk_user
             SqlDataAdapter adapter1 = new SqlDataAdapter(cmdid);
             adapter1.Fill(data1);
             dataGridView2.DataSource = data1;
+            Console.WriteLine("utworzyłem bazę danych");
             conn.Close();
         }
     }
