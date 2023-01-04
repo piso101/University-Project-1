@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(lotypoprawa2));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lotyBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.lotyBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -47,6 +48,8 @@
             this.lotyBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.odswiezbtn = new System.Windows.Forms.ToolStripButton();
             this.lotyDataGridView = new System.Windows.Forms.DataGridView();
+            this.lotyTableAdapter = new apk.admin.projektDataSetTableAdapters.lotyTableAdapter();
+            this.tableAdapterManager = new apk.admin.projektDataSetTableAdapters.TableAdapterManager();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,8 +57,6 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lotyTableAdapter = new apk.admin.projektDataSetTableAdapters.lotyTableAdapter();
-            this.tableAdapterManager = new apk.admin.projektDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.lotyBindingNavigator)).BeginInit();
             this.lotyBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lotyBindingSource)).BeginInit();
@@ -228,7 +229,7 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.lotyDataGridView.DataSource = this.lotyBindingSource;
-            this.lotyDataGridView.GridColor = System.Drawing.Color.WhiteSmoke;
+            this.lotyDataGridView.GridColor = System.Drawing.Color.Black;
             this.lotyDataGridView.Location = new System.Drawing.Point(3, 24);
             this.lotyDataGridView.Name = "lotyDataGridView";
             this.lotyDataGridView.RowHeadersWidth = 51;
@@ -236,9 +237,24 @@
             this.lotyDataGridView.Size = new System.Drawing.Size(1091, 531);
             this.lotyDataGridView.TabIndex = 1;
             // 
+            // lotyTableAdapter
+            // 
+            this.lotyTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.lotyTableAdapter = this.lotyTableAdapter;
+            this.tableAdapterManager.UpdateOrder = apk.admin.projektDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.usersTableAdapter = null;
+            this.tableAdapterManager.zabukowaneTableAdapter = null;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "idlotu";
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn1.HeaderText = "idlotu";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -291,18 +307,6 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.Width = 66;
             // 
-            // lotyTableAdapter
-            // 
-            this.lotyTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.lotyTableAdapter = this.lotyTableAdapter;
-            this.tableAdapterManager.UpdateOrder = apk.admin.projektDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.usersTableAdapter = null;
-            this.tableAdapterManager.zabukowaneTableAdapter = null;
-            // 
             // lotypoprawa2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -313,7 +317,7 @@
             this.Controls.Add(this.lotyDataGridView);
             this.Controls.Add(this.lotyBindingNavigator);
             this.Name = "lotypoprawa2";
-            this.Size = new System.Drawing.Size(1059, 598);
+            this.Size = new System.Drawing.Size(1097, 558);
             this.Load += new System.EventHandler(this.lotypoprawa2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lotyBindingNavigator)).EndInit();
             this.lotyBindingNavigator.ResumeLayout(false);
@@ -346,6 +350,7 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton lotyBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView lotyDataGridView;
+        private System.Windows.Forms.ToolStripButton odswiezbtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -353,6 +358,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.ToolStripButton odswiezbtn;
     }
 }
