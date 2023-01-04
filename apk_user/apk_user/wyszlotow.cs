@@ -85,7 +85,7 @@ namespace apk_user
                 adapter.Fill(data);
                 //pokazuje baze danych w datagridview
                 dataGridView1.DataSource = data;
-
+                this.dataGridView1.Columns["idlotu"].Visible = false;
                 DataGridViewButtonColumn zabukujbtn = new DataGridViewButtonColumn();
                 zabukujbtn.Name = "Zabukuj";
                 zabukujbtn.Text = "Zabukuj";
