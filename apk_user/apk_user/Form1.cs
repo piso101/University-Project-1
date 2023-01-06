@@ -63,7 +63,8 @@ namespace apk_user
         {
             zabukowaneuser1.Hide();
             wyszlotow1.Show();
-            wyszlotow1.BringToFront(); // czeba bedzie zrobic hide dla innyhc okienek 
+            wyszlotow1.BringToFront();
+            daneuser2.Hide();
         }
 
         private void wyszlotow1_Load(object sender, EventArgs e)
@@ -76,13 +77,17 @@ namespace apk_user
             wyszlotow1.Hide();
             zabukowaneuser1.Show();
             zabukowaneuser1.BringToFront();
+            daneuser2.Hide();
             
 
         }
 
         private void mojedanebtn_Click(object sender, EventArgs e)
         {
-
+            wyszlotow1.Hide();
+            daneuser2.Show();
+            daneuser2.BringToFront();
+            zabukowaneuser1.Hide();
         }
 
         private void zabukowaneuser1_Load(object sender, EventArgs e)
