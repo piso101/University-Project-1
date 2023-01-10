@@ -57,5 +57,10 @@ namespace apk_user
         {
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
     }   
 }
