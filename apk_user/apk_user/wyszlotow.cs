@@ -234,6 +234,26 @@ namespace apk_user
 
         }
 
-        
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            cmd.CommandText = "SELECT loty.idlotu, loty.skad,loty.dokad,loty.dataodlotu, loty.dlugosclotu, loty.cena,loty.dostepnemiejsca\r\nFROM loty";
+            //tworze baze danych wewnetrzna zeby miec gdzie tymczasowo przetrzymac te informacje od bazy danych
+            DataTable data = new DataTable();
+            //adapter uzupelnia tymczasowa baze danych
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(data);
+            //pokazuje baze danych w datagridview
+            dataGridView1.DataSource = data;
+            this.dataGridView1.Columns["idlotu"].Visible = false;
+            this.dataGridView1.Columns["skad"].HeaderText = "Departure";
+            this.dataGridView1.Columns["dokad"].HeaderText = "Destination";
+            this.dataGridView1.Columns["dataodlotu"].HeaderText = "From";
+            this.dataGridView1.Columns["dlugosclotu"].HeaderText = "Flight Lenght";
+            this.dataGridView1.Columns["cena"].HeaderText = "Price";
+            this.dataGridView1.Columns["dostepnemiejsca"].HeaderText = "Available Seats";
+
+        }
     }
 }
