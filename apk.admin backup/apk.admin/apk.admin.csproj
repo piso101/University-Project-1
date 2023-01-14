@@ -72,6 +72,10 @@
   </PropertyGroup>
   <PropertyGroup>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Plugin.InputKit, Version=4.1.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\Aplikacja login\packages\Xamarin.Forms.InputKit.4.1.6\lib\netstandard2.0\Plugin.InputKit.dll</HintPath>
@@ -183,6 +187,7 @@
       <DependentUpon>zabukowaneokno.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="apk.admin_TemporaryKey.pfx" />
+    <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="projektDataSet.xsc">
       <DependentUpon>projektDataSet.xsd</DependentUpon>
