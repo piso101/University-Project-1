@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.searchbtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -48,7 +49,6 @@
             this.wyszlotow1 = new apk_user.wyszlotow();
             this.zabukowaneuser1 = new apk_user.zabukowaneuser();
             this.daneuser2 = new apk_user.daneuser();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -97,6 +97,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(198, 585);
             this.panel1.TabIndex = 4;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Black;
+            this.panel9.Location = new System.Drawing.Point(194, -4);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(10, 746);
+            this.panel9.TabIndex = 11;
             // 
             // panel8
             // 
@@ -289,14 +297,6 @@
             this.daneuser2.Size = new System.Drawing.Size(810, 585);
             this.daneuser2.TabIndex = 7;
             // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.Black;
-            this.panel9.Location = new System.Drawing.Point(194, -4);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(10, 746);
-            this.panel9.TabIndex = 11;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,9 +307,12 @@
             this.Controls.Add(this.wyszlotow1);
             this.Controls.Add(this.zabukowaneuser1);
             this.Controls.Add(this.daneuser2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.ShowIcon = false;
+            this.Text = "User";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
