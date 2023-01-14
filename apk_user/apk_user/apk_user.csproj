@@ -68,6 +68,12 @@
     <Compile Include="UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="podsumowanie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="podsumowanie.Designer.cs">
+      <DependentUpon>podsumowanie.cs</DependentUpon>
+    </Compile>
     <Compile Include="zabukowaneuser.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="podsumowanie.resx">
+      <DependentUpon>podsumowanie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>

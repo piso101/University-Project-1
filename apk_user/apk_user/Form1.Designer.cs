@@ -48,6 +48,7 @@
             this.wyszlotow1 = new apk_user.wyszlotow();
             this.zabukowaneuser1 = new apk_user.zabukowaneuser();
             this.daneuser2 = new apk_user.daneuser();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -82,6 +83,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.panel9);
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.panel7);
             this.panel1.Controls.Add(this.panel6);
@@ -287,6 +289,14 @@
             this.daneuser2.Size = new System.Drawing.Size(810, 585);
             this.daneuser2.TabIndex = 7;
             // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Black;
+            this.panel9.Location = new System.Drawing.Point(194, -4);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(10, 746);
+            this.panel9.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,9 +304,9 @@
             this.BackColor = System.Drawing.Color.Aquamarine;
             this.ClientSize = new System.Drawing.Size(1008, 585);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.daneuser2);
             this.Controls.Add(this.wyszlotow1);
             this.Controls.Add(this.zabukowaneuser1);
+            this.Controls.Add(this.daneuser2);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -321,7 +331,7 @@
         private System.Windows.Forms.Label logindisplay;
         private wyszlotow wyszlotow1;
         private zabukowaneuser zabukowaneuser1;
-        private daneuser daneuser1;
+        
         private daneuser daneuser2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -336,6 +346,7 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel9;
     }
 }
 
