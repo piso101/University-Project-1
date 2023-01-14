@@ -35,6 +35,7 @@ namespace apk_user
         public static string username;
         public static string user_password;
         public static int id;
+        
         public void Userd_id(string c, string d)
         {
             username = c.ToString();
@@ -99,13 +100,15 @@ namespace apk_user
                 int len = dataGridView1.Columns.Count;
                 dataGridView1.Columns.Insert(len, zabukujbtn);
                 
+                
+                
                 cn.Close();
 
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Błąd", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -130,7 +133,7 @@ namespace apk_user
                 { 
                     if(cena_bag_box.Text=="")//sprawdza czy cena bagażu została wybrana
                     {
-                        MessageBox.Show("Proszę wybrać cenę bagażu");
+                        MessageBox.Show("Choose your luggage.");
                         return;//Trzeba jakoś zCancelować cały event ale nw jak atm :(
                         
                     }
@@ -158,7 +161,13 @@ namespace apk_user
                         string idlotu = row.Cells["idlotu"].Value.ToString();
                         string cenabiletu = row.Cells["cena"].Value.ToString();
                         string iloscmiejsc = row.Cells["dostepnemiejsca"].Value.ToString();
+                        int prc  = int.Parse(cenabiletu) + cenabagazu;
+                        price = prc.ToString();
+                        dest = row.Cells["skad"].Value.ToString();
+                        arri = row.Cells["dokad"].Value.ToString();
+                        date = row.Cells["dataodlotu"].Value.ToString();
                         int miejsce = int.Parse(iloscmiejsc);
+                        seat = miejsce;
 
                         SqlCommand cmdinsert = new SqlCommand();
                         cmdinsert.Connection = cn;
@@ -179,11 +188,13 @@ namespace apk_user
                         cmdupdate.Parameters.AddWithValue("@pam1", miejsce);
                         cmdupdate.Parameters.AddWithValue("@pam2", idlotu);
                         cmdupdate.ExecuteNonQuery();// wykonujemy komende
+                        podsumowanie1.Show();
+                        podsumowanie1.BringToFront();
 
                         cn.Close();// trzeba zamknąć połączenie przed następną linijką kodu
                         loadbtn.PerformClick();//odświeżamy datagridview aby wyświetlił prawidłową ilość miejsc
                         apk_user.zabukowaneuser f2 = new apk_user.zabukowaneuser();
-
+                        
                         f2.przycisk();
 
                     }
@@ -192,6 +203,11 @@ namespace apk_user
 
 
         }
+        public static string price;
+        public static string dest;
+        public static string arri;
+        public static string date;
+        public static int seat;
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -217,5 +233,7 @@ namespace apk_user
         {
 
         }
+
+        
     }
 }

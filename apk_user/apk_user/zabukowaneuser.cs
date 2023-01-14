@@ -65,22 +65,34 @@ namespace apk_user
             if(conn.State != ConnectionState.Open)
             {
                 conn.Open();
-                Console.WriteLine("otwieram połączenie");
             }
             
-            Console.WriteLine("klikam");
+            
             SqlCommand cmdid = new SqlCommand();
             cmdid.Connection = conn;
-            cmdid.CommandText = "SELECT *\r\nFROM zabukowane\r\n WHERE userid = @id ";
-            Console.WriteLine(id);
+            cmdid.CommandText = "SELECT * \r\nFROM zabukowane\r\n INNER JOIN loty ON zabukowane.idlotu = loty.idlotu WHERE userid = @id";
+            
             cmdid.Parameters.AddWithValue("@id", id);
 
             DataTable data1 = new DataTable();
             SqlDataAdapter adapter1 = new SqlDataAdapter(cmdid);
             adapter1.Fill(data1);
             dataGridView2.DataSource = data1;
-            Console.WriteLine("utworzyłem bazę danych");
-            dataGridView2.MultiSelect = false;
+            this.dataGridView2.Columns["skad"].HeaderText = "Departure";
+            this.dataGridView2.Columns["dokad"].HeaderText = "Destination";
+            this.dataGridView2.Columns["dataodlotu"].HeaderText = "From";
+            this.dataGridView2.Columns["dlugosclotu"].HeaderText = "Flight Lenght";
+            this.dataGridView2.Columns["cenabiletu"].HeaderText = "Price";
+            this.dataGridView2.Columns["miejsce"].HeaderText = "Seat Number";
+            this.dataGridView2.Columns["dostepnemiejsca"].Visible = false;
+            this.dataGridView2.Columns["idlotu1"].Visible = false;
+            this.dataGridView2.Columns["idlotu"].Visible = false;
+            this.dataGridView2.Columns["userid"].Visible = false;
+            this.dataGridView2.Columns["cena"].Visible = false;
+            this.dataGridView2.Columns["cenabagazu"].Visible = false;
+
+
+
             conn.Close();
         }
         

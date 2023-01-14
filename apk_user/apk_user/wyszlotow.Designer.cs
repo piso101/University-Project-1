@@ -44,6 +44,7 @@
             this.fromdate = new System.Windows.Forms.DateTimePicker();
             this.dokadbox = new System.Windows.Forms.ComboBox();
             this.skadbox = new System.Windows.Forms.ComboBox();
+            this.podsumowanie1 = new apk_user.podsumowanie();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -182,7 +183,7 @@
             this.cena_bag_box.Location = new System.Drawing.Point(382, 56);
             this.cena_bag_box.Margin = new System.Windows.Forms.Padding(2);
             this.cena_bag_box.Name = "cena_bag_box";
-            this.cena_bag_box.Size = new System.Drawing.Size(109, 25);
+            this.cena_bag_box.Size = new System.Drawing.Size(138, 25);
             this.cena_bag_box.TabIndex = 6;
             // 
             // todate
@@ -230,12 +231,22 @@
             this.skadbox.TabIndex = 0;
             this.skadbox.SelectedIndexChanged += new System.EventHandler(this.skadbox_SelectedIndexChanged);
             // 
+            // podsumowanie1
+            // 
+            this.podsumowanie1.BackColor = System.Drawing.Color.White;
+            this.podsumowanie1.Location = new System.Drawing.Point(201, 213);
+            this.podsumowanie1.Name = "podsumowanie1";
+            this.podsumowanie1.Size = new System.Drawing.Size(417, 228);
+            this.podsumowanie1.TabIndex = 4;
+            this.podsumowanie1.Visible = false;
+            // 
             // wyszlotow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.podsumowanie1);
+            this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "wyszlotow";
             this.Size = new System.Drawing.Size(813, 585);
@@ -263,5 +274,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private podsumowanie podsumowanie1;
     }
 }
