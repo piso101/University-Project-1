@@ -48,9 +48,9 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(178, 556);
+            this.panel1.Size = new System.Drawing.Size(134, 452);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -59,19 +59,19 @@
             this.panel2.Controls.Add(this.usersbtn);
             this.panel2.Controls.Add(this.lotybtn);
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(178, 556);
+            this.panel2.Size = new System.Drawing.Size(134, 452);
             this.panel2.TabIndex = 6;
             // 
             // zabukowanebtn
             // 
             this.zabukowanebtn.BackColor = System.Drawing.Color.DarkCyan;
             this.zabukowanebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.zabukowanebtn.Location = new System.Drawing.Point(12, 91);
-            this.zabukowanebtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.zabukowanebtn.Location = new System.Drawing.Point(9, 74);
+            this.zabukowanebtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.zabukowanebtn.Name = "zabukowanebtn";
-            this.zabukowanebtn.Size = new System.Drawing.Size(155, 34);
+            this.zabukowanebtn.Size = new System.Drawing.Size(116, 28);
             this.zabukowanebtn.TabIndex = 4;
             this.zabukowanebtn.Text = "Zabukowane";
             this.zabukowanebtn.UseVisualStyleBackColor = false;
@@ -82,10 +82,10 @@
             this.usersbtn.BackColor = System.Drawing.Color.DarkCyan;
             this.usersbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.usersbtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.usersbtn.Location = new System.Drawing.Point(12, 51);
-            this.usersbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.usersbtn.Location = new System.Drawing.Point(9, 41);
+            this.usersbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.usersbtn.Name = "usersbtn";
-            this.usersbtn.Size = new System.Drawing.Size(155, 34);
+            this.usersbtn.Size = new System.Drawing.Size(116, 28);
             this.usersbtn.TabIndex = 3;
             this.usersbtn.Text = "Użytkownicy";
             this.usersbtn.UseVisualStyleBackColor = false;
@@ -95,10 +95,10 @@
             // 
             this.lotybtn.BackColor = System.Drawing.Color.DarkCyan;
             this.lotybtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lotybtn.Location = new System.Drawing.Point(12, 11);
-            this.lotybtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lotybtn.Location = new System.Drawing.Point(9, 9);
+            this.lotybtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lotybtn.Name = "lotybtn";
-            this.lotybtn.Size = new System.Drawing.Size(155, 34);
+            this.lotybtn.Size = new System.Drawing.Size(116, 28);
             this.lotybtn.TabIndex = 2;
             this.lotybtn.Text = "Loty";
             this.lotybtn.UseVisualStyleBackColor = false;
@@ -106,10 +106,10 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(527, 79);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(395, 64);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(7, 6);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(5, 5);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // lotyokno
@@ -118,9 +118,10 @@
             this.lotyokno.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.lotyokno.BackColor = System.Drawing.Color.Transparent;
             this.lotyokno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.lotyokno.Location = new System.Drawing.Point(173, 0);
+            this.lotyokno.Location = new System.Drawing.Point(130, 0);
+            this.lotyokno.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lotyokno.Name = "lotyokno";
-            this.lotyokno.Size = new System.Drawing.Size(1097, 558);
+            this.lotyokno.Size = new System.Drawing.Size(822, 453);
             this.lotyokno.TabIndex = 5;
             // 
             // usersokno
@@ -131,10 +132,10 @@
             this.usersokno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.usersokno.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.usersokno.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.usersokno.Location = new System.Drawing.Point(173, 0);
+            this.usersokno.Location = new System.Drawing.Point(130, 0);
             this.usersokno.Margin = new System.Windows.Forms.Padding(0);
             this.usersokno.Name = "usersokno";
-            this.usersokno.Size = new System.Drawing.Size(1062, 600);
+            this.usersokno.Size = new System.Drawing.Size(796, 488);
             this.usersokno.TabIndex = 3;
             this.usersokno.Load += new System.EventHandler(this.usersokno_Load);
             // 
@@ -144,27 +145,29 @@
             this.zabukowaneokno1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.zabukowaneokno1.BackColor = System.Drawing.Color.Transparent;
             this.zabukowaneokno1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.zabukowaneokno1.Location = new System.Drawing.Point(173, 0);
-            this.zabukowaneokno1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.zabukowaneokno1.Location = new System.Drawing.Point(130, 0);
+            this.zabukowaneokno1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.zabukowaneokno1.Name = "zabukowaneokno1";
-            this.zabukowaneokno1.Size = new System.Drawing.Size(1060, 605);
+            this.zabukowaneokno1.Size = new System.Drawing.Size(795, 491);
             this.zabukowaneokno1.TabIndex = 4;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1235, 556);
+            this.ClientSize = new System.Drawing.Size(926, 452);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lotyokno);
             this.Controls.Add(this.usersokno);
             this.Controls.Add(this.zabukowaneokno1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Apk.Admin";
             this.Load += new System.EventHandler(this.Form1_Load);

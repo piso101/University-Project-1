@@ -124,6 +124,8 @@
             this.Controls.Add(this.userapk1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.register_ui);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
