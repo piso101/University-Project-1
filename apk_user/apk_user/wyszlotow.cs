@@ -61,7 +61,7 @@ namespace apk_user
         {
             if (dataGridView1.Columns.Count > 1)
             {
-                dataGridView1.Columns.Remove("Zabukuj");
+                dataGridView1.Columns.Remove("Buy");
             }
             try
             {
@@ -86,12 +86,19 @@ namespace apk_user
                 //pokazuje baze danych w datagridview
                 dataGridView1.DataSource = data;
                 this.dataGridView1.Columns["idlotu"].Visible = false;
+                this.dataGridView1.Columns["skad"].HeaderText = "Departure";
+                this.dataGridView1.Columns["dokad"].HeaderText = "Destination";
+                this.dataGridView1.Columns["dataodlotu"].HeaderText = "From";
+                this.dataGridView1.Columns["dlugosclotu"].HeaderText = "Flight Lenght";
+                this.dataGridView1.Columns["cena"].HeaderText = "Price";
+                this.dataGridView1.Columns["dostepnemiejsca"].HeaderText = "Available Seats";
                 DataGridViewButtonColumn zabukujbtn = new DataGridViewButtonColumn();
-                zabukujbtn.Name = "Zabukuj";
-                zabukujbtn.Text = "Zabukuj";
+                zabukujbtn.Name = "Buy";
+                zabukujbtn.Text = "Buy";
                 zabukujbtn.UseColumnTextForButtonValue = true;
                 int len = dataGridView1.Columns.Count;
                 dataGridView1.Columns.Insert(len, zabukujbtn);
+                
                 cn.Close();
 
 
@@ -115,7 +122,7 @@ namespace apk_user
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "Zabukuj")
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Buy")
             {
                 int cenabagazu = 0;
                 bool cenatest = false;
@@ -127,19 +134,19 @@ namespace apk_user
                         return;//Trzeba jakoś zCancelować cały event ale nw jak atm :(
                         
                     }
-                    else if(cena_bag_box.Text == "Mały - 150zł")
+                    else if(cena_bag_box.Text == "Small - 150 PLN")
                     {
                         cenabagazu = 150;
                         cenatest = true;
                     }
-                    else if (cena_bag_box.Text == "Duży - 200zł")
+                    else if (cena_bag_box.Text == "Big - 200 PLN")
                     {
                         cenabagazu = 200;
                         cenatest = true;
                     }
                     
                 }
-                if (MessageBox.Show("Czy chcesz zabukować ten lot?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Do you want to buy this flight?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
                     cn.Open();
@@ -202,6 +209,11 @@ namespace apk_user
         }
 
         private void fromdate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

@@ -72,27 +72,25 @@ namespace apk_user
             
         }
 
-        public void mojelotybtn_Click(object sender, EventArgs e)
+        private void zabukowaneuser1_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void mojelotybtn_Click_1(object sender, EventArgs e)
         {
             wyszlotow1.Hide();
             zabukowaneuser1.Show();
             zabukowaneuser1.BringToFront();
             daneuser2.Hide();
-            
-
         }
 
-        private void mojedanebtn_Click(object sender, EventArgs e)
+        private void mojedanebtn_Click_1(object sender, EventArgs e)
         {
             wyszlotow1.Hide();
             daneuser2.Show();
             daneuser2.BringToFront();
             zabukowaneuser1.Hide();
-        }
-
-        private void zabukowaneuser1_Load(object sender, EventArgs e)
-        {
-           
         }
     }
 }

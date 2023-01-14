@@ -80,7 +80,9 @@ namespace apk_user
             adapter1.Fill(data1);
             dataGridView2.DataSource = data1;
             Console.WriteLine("utworzyłem bazę danych");
+            dataGridView2.MultiSelect = false;
             conn.Close();
         }
+        
     }
 }

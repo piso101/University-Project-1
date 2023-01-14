@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.projektDataSet = new apk_user.projektDataSet();
             this.zabukowaneBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.zabukowaneTableAdapter = new apk_user.projektDataSetTableAdapters.zabukowaneTableAdapter();
@@ -70,8 +71,14 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
             this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idlotu,
@@ -80,60 +87,65 @@
             this.cenabagazuDataGridViewTextBoxColumn,
             this.cenabiletuDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.zabukowaneBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(4, 12);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(0);
+            this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(582, 331);
+            this.dataGridView2.Size = new System.Drawing.Size(810, 585);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // idlotu
             // 
             this.idlotu.DataPropertyName = "idlotu";
-            this.idlotu.HeaderText = "idlotu";
+            this.idlotu.HeaderText = "ID Flight";
             this.idlotu.MinimumWidth = 6;
             this.idlotu.Name = "idlotu";
             this.idlotu.ReadOnly = true;
-            this.idlotu.Width = 57;
             // 
             // miejsceDataGridViewTextBoxColumn
             // 
             this.miejsceDataGridViewTextBoxColumn.DataPropertyName = "miejsce";
-            this.miejsceDataGridViewTextBoxColumn.HeaderText = "miejsce";
+            this.miejsceDataGridViewTextBoxColumn.HeaderText = "Destination";
             this.miejsceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.miejsceDataGridViewTextBoxColumn.Name = "miejsceDataGridViewTextBoxColumn";
             this.miejsceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.miejsceDataGridViewTextBoxColumn.Width = 67;
             // 
             // userid
             // 
             this.userid.DataPropertyName = "userid";
-            this.userid.HeaderText = "userid";
+            this.userid.HeaderText = "ID User";
             this.userid.MinimumWidth = 6;
             this.userid.Name = "userid";
             this.userid.ReadOnly = true;
-            this.userid.Width = 60;
             // 
             // cenabagazuDataGridViewTextBoxColumn
             // 
             this.cenabagazuDataGridViewTextBoxColumn.DataPropertyName = "cenabagazu";
-            this.cenabagazuDataGridViewTextBoxColumn.HeaderText = "cenabagazu";
+            this.cenabagazuDataGridViewTextBoxColumn.HeaderText = "Luggage Price";
             this.cenabagazuDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cenabagazuDataGridViewTextBoxColumn.Name = "cenabagazuDataGridViewTextBoxColumn";
             this.cenabagazuDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cenabagazuDataGridViewTextBoxColumn.Width = 91;
             // 
             // cenabiletuDataGridViewTextBoxColumn
             // 
             this.cenabiletuDataGridViewTextBoxColumn.DataPropertyName = "cenabiletu";
-            this.cenabiletuDataGridViewTextBoxColumn.HeaderText = "cenabiletu";
+            this.cenabiletuDataGridViewTextBoxColumn.HeaderText = "Flight Price";
             this.cenabiletuDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cenabiletuDataGridViewTextBoxColumn.Name = "cenabiletuDataGridViewTextBoxColumn";
             this.cenabiletuDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cenabiletuDataGridViewTextBoxColumn.Width = 81;
             // 
             // zabukowaneuser
             // 
@@ -141,9 +153,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "zabukowaneuser";
-            this.Size = new System.Drawing.Size(586, 353);
+            this.Size = new System.Drawing.Size(810, 585);
             this.Load += new System.EventHandler(this.zabukowaneuser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.projektDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.zabukowaneBindingSource)).EndInit();
