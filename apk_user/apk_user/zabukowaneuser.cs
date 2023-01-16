@@ -27,9 +27,10 @@ namespace apk_user
 
         public void zabukowaneuser_Load(object sender, EventArgs e)
         {
+            // pobieramy username i password z głownego form1
             string username = Form1.username;
             string user_password = Form1.user_password;
-            
+            // wysyłamy zapytanie o ID usera
             string command = "SELECT userid FROM users WHERE login_text = '" + username + "' AND haslo = '" + user_password + "'";
             conn.Open();
             SqlCommand cmd = new SqlCommand(command, conn);
@@ -54,6 +55,7 @@ namespace apk_user
         }
         public void przycisk()
         {
+            // metoda odświerzania schowanym przyciskiem
             button1.PerformClick();
             
 
@@ -67,7 +69,7 @@ namespace apk_user
                 conn.Open();
             }
             
-            
+            //łączymy dwie tabele, zmieniamy nazwy column oraz chowamy niepotrzebne informacje
             SqlCommand cmdid = new SqlCommand();
             cmdid.Connection = conn;
             cmdid.CommandText = "SELECT * \r\nFROM zabukowane\r\n INNER JOIN loty ON zabukowane.idlotu = loty.idlotu WHERE userid = @id";
@@ -90,9 +92,6 @@ namespace apk_user
             this.dataGridView2.Columns["userid"].Visible = false;
             this.dataGridView2.Columns["cena"].Visible = false;
             this.dataGridView2.Columns["cenabagazu"].Visible = false;
-
-
-
             conn.Close();
         }
         

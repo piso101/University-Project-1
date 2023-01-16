@@ -26,9 +26,11 @@ namespace apk_user
         public static string user_password;
 
         public void userdisplay(string a, string b)
-        {
+        {   
+            // pobieramy login i password
             username = a.ToString();
             user_password = b.ToString();
+            // wyświtamy powitanie
             logindisplay.Text = "Witaj, " + username;
             
             
@@ -38,7 +40,9 @@ namespace apk_user
         public void Form1_Load(object sender, EventArgs e)
         {
             
-           
+           // przekazujemy wyszukiwarce lotów nasze dane jeżeli wogóle istnieją
+           // !jest to stara metoda niepotrzebnie skomplikowana ale działa, nie widziałem potrzeby tracić czasu na zmianę 
+           // prościej ejst po prostu odwołać się do formsa z którego chcemy pobrać zmienną -> example.Form1
             apk_user.wyszlotow f3 = new apk_user.wyszlotow();
             string c = username;
             string d = user_password;
@@ -60,7 +64,8 @@ namespace apk_user
         }
 
         private void searchbtn_Click(object sender, EventArgs e)
-        {
+        {   
+            // chowamy i pokazujemy to co chemy
             zabukowaneuser1.Hide();
             wyszlotow1.Show();
             wyszlotow1.BringToFront();
@@ -79,6 +84,7 @@ namespace apk_user
 
         private void mojelotybtn_Click_1(object sender, EventArgs e)
         {
+            // chowamy i pokazujemy to co chemy
             wyszlotow1.Hide();
             zabukowaneuser1.Show();
             zabukowaneuser1.BringToFront();
@@ -87,6 +93,7 @@ namespace apk_user
 
         private void mojedanebtn_Click_1(object sender, EventArgs e)
         {
+            // chowamy i pokazujemy to co chemy
             wyszlotow1.Hide();
             daneuser2.Show();
             daneuser2.BringToFront();

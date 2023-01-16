@@ -17,6 +17,7 @@ namespace apk_user
         public daneuser()
         {
             InitializeComponent();
+            // kod dwa razy bo nie wiem gdzie lepiej usunąć XD
             string username = Form1.username;
             string user_password = Form1.user_password;
 
@@ -66,6 +67,7 @@ namespace apk_user
 
         private void daneuser_Load(object sender, EventArgs e)
         {
+            //pobieramy potrzebne dane użytkownika
             string username = Form1.username;
             string user_password = Form1.user_password;
 
@@ -87,6 +89,7 @@ namespace apk_user
 
             }
             reader.Close();
+            //wypełniamy wcześniej pobranymi informacjami użytkownika wszystkie labele
             label1.Text = user_name;
             label2.Text = user_surname;
             label3.Text = user_email;

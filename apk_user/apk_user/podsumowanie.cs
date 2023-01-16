@@ -42,7 +42,7 @@ namespace apk_user
 
         private void podsumowanie_VisibleChanged(object sender, EventArgs e)
         {
-            
+            // pobieramy dane z zakupionego lotu i wypełniamy
             lb1.Text = wyszlotow.price + " PLN";
             lb2.Text = wyszlotow.dest;
             lb3.Text = wyszlotow.arri;

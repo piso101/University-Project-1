@@ -19,6 +19,7 @@ namespace apk_user
         {
             InitializeComponent();
             cn.Open();
+            // wyciągamy miejsca przylotów i odlotów bez duplikatów i wypełniamy comboboxy 
             SqlDataAdapter da1 = new SqlDataAdapter("SELECT DISTINCT loty.skad \r\nFROM loty", cn);
             SqlDataAdapter da2 = new SqlDataAdapter("SELECT DISTINCT loty.dokad \r\nFROM loty", cn);
             DataTable dt_skad = new DataTable();
@@ -86,6 +87,7 @@ namespace apk_user
                 adapter.Fill(data);
                 //pokazuje baze danych w datagridview
                 dataGridView1.DataSource = data;
+                //zmieniamy nazwy column oraz chowamy niepotrzebne informacje
                 this.dataGridView1.Columns["idlotu"].Visible = false;
                 this.dataGridView1.Columns["skad"].HeaderText = "Departure";
                 this.dataGridView1.Columns["dokad"].HeaderText = "Destination";
@@ -93,6 +95,7 @@ namespace apk_user
                 this.dataGridView1.Columns["dlugosclotu"].HeaderText = "Flight Lenght";
                 this.dataGridView1.Columns["cena"].HeaderText = "Price";
                 this.dataGridView1.Columns["dostepnemiejsca"].HeaderText = "Available Seats";
+                // dodajemy przycisk do ostatniej kolumny
                 DataGridViewButtonColumn zabukujbtn = new DataGridViewButtonColumn();
                 zabukujbtn.Name = "Buy";
                 zabukujbtn.Text = "Buy";
@@ -239,13 +242,11 @@ namespace apk_user
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = cn;
             cmd.CommandText = "SELECT loty.idlotu, loty.skad,loty.dokad,loty.dataodlotu, loty.dlugosclotu, loty.cena,loty.dostepnemiejsca\r\nFROM loty";
-            //tworze baze danych wewnetrzna zeby miec gdzie tymczasowo przetrzymac te informacje od bazy danych
             DataTable data = new DataTable();
-            //adapter uzupelnia tymczasowa baze danych
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(data);
-            //pokazuje baze danych w datagridview
             dataGridView1.DataSource = data;
+            // zmieniamy nazwy column oraz chowamy niepotrzebne informacje
             this.dataGridView1.Columns["idlotu"].Visible = false;
             this.dataGridView1.Columns["skad"].HeaderText = "Departure";
             this.dataGridView1.Columns["dokad"].HeaderText = "Destination";
