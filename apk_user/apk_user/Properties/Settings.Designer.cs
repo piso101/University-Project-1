@@ -29,7 +29,11 @@ namespace apk_user.Properties {
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string projektConnectionString {
             get {
-                return ((string)(this["projektConnectionString"]));
+                var connectionString = global::System.Environment.GetEnvironmentVariable("PROJEKT_CONNECTION_STRING");
+                if (string.IsNullOrWhiteSpace(connectionString)) {
+                    throw new global::System.InvalidOperationException("Set the PROJEKT_CONNECTION_STRING environment variable before starting the application.");
+                }
+                return connectionString;
             }
         }
     }
